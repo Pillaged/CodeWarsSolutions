@@ -1,0 +1,21 @@
+def max_sequence(arr):
+    sum = 0
+    for spot, i in enumerate(arr):
+        newsum = i
+        for j in arr[spot+1:]:
+            newsum += j
+            if newsum > sum:
+                sum = newsum
+    return sum
+#While this does get to the solution, it is O(n)^2, too slow. The following is what I should have implemented.
+
+
+
+
+def max_sequence_faster(arr):
+    max,curr=0,0
+    for x in arr:
+        curr+=x
+        if curr<0:curr=0
+        if curr>max:max=curr
+    return max
