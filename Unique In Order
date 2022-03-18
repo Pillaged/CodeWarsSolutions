@@ -1,0 +1,12 @@
+def unique_in_order(iterable):
+    cache = []
+    if len(iterable) > 0:
+        cache = [iterable[0]]
+    for i in iterable:
+        if i != cache[len(cache)-1]:
+            cache.append(i)
+    return cache
+    
+#Notes for improvement:
+#Function would be O(n) if I added an additional cache instead of checking the last item via 
+# the get method on the list. 
