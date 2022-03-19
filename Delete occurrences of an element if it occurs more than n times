@@ -1,0 +1,9 @@
+def delete_nth(order,max_e):
+    dict = {}
+    ls = []
+    for i in order:
+        dict.setdefault(i, 0)
+        dict[i]+=1
+        if not dict[i] > max_e:
+            ls.append(i)
+    return ls
