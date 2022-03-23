@@ -20,3 +20,7 @@ def domain_name(url):
     return word
     
 #This was a hard one, too many edge cases.
+
+
+def domain_name(url):
+    return url.split("//")[-1].split("www.")[-1].split(".")[0] #This works for some reason
