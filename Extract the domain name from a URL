@@ -1,0 +1,22 @@
+def domain_name(url):
+    prev = 'a'
+    word = ''
+    if ('//' in url or 'www.' in url):
+        if ('//' in url and 'www.' in url):
+            url = url[10:]
+        for i, k in enumerate(url):
+            if not (prev.isalpha() or prev.isdigit()) and (k.isalpha() or k.isdigit()):
+                for j in url[i:]:
+                    if j == '.':
+                        break
+                    word += j
+                break
+            prev += k
+    else: 
+        for j in url:
+            if j == '.':
+                break
+            word += j
+    return word
+    
+#This was a hard one, too many edge cases.
